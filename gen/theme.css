@@ -578,15 +578,18 @@
   }
   /* forum thread, favourite like heart */
   .like-wrap.thread .button .fa-heart,
-  .actions .favourite .fa-heart {
+  .actions .favourite .fa-heart,
+  .studio .favourite .fa-heart {
     color: #0000;
     stroke: rgb(var(--color-white));
     stroke-width: 70;
   }
   .like-wrap.thread .button.liked .fa-heart,
   .actions .favourite.liked .fa-heart,
+  .studio .favourite.liked .fa-heart,
   .like-wrap.thread .button.isFavourite .fa-heart,
-  .actions .favourite.isFavourite .fa-heart {
+  .actions .favourite.isFavourite .fa-heart,
+  .studio .favourite.isFavourite .fa-heart {
     color: rgb(var(--color-white)) !important;
     stroke: rgba(0, 0, 0, 0) !important;
   }
@@ -664,20 +667,28 @@
     border-left: 7px solid rgba(var(--color-foreground-grey-dark));
   }
   /* Staff/character page header */
-  .character-wrap .header,
-  .staff-wrap .header {
-    background: rgb(var(--color-foreground));
+  @media screen and (max-width: 700px) {
+    .character-wrap > .character > .header .mobile-background,
+    .staff-wrap > .staff > .header .mobile-background {
+      background: rgb(var(--color-foreground));
+    }
   }
-  .character-wrap .header .name,
-  .staff-wrap .header .name {
+  @media screen and (min-width: 701px) {
+    .character-wrap > .character > .header,
+    .staff-wrap > .staff > .header {
+      background: rgb(var(--color-foreground));
+    }
+  }
+  .character-wrap > .character > .header .name,
+  .staff-wrap > .staff > .header .name {
     color: rgb(var(--color-gray-900));
   }
-  .character-wrap .header .name-alt,
-  .staff-wrap .header .name-alt {
+  .character-wrap > .character > .header .name-alt,
+  .staff-wrap > .staff > .header .name-alt {
     color: rgb(var(--color-gray-800));
   }
-  .character-wrap .header .edit,
-  .staff-wrap .header .edit {
+  .character-wrap > .character > .header .edit,
+  .staff-wrap > .staff > .header .edit {
     color: rgb(var(--color-gray-800));
   }
   /* ------ Database Tools ------ */
